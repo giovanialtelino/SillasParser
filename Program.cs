@@ -16,32 +16,6 @@ namespace SillasParser
             return step2;
         }
 
-        public void NotAsyncJapaDoesntLike()
-        {
-            var file = String.Concat(Directory.GetCurrentDirectory(), "/TMobM.html");
-            var fullFileName = String.Concat(Directory.GetCurrentDirectory(), "/TMob.csv");
-
-            var sr = new StreamReader(file);
-
-            var document = new HtmlAgilityPack.HtmlDocument();
-            document.Load(sr);
-
-            var x = document.GetElementbyId("tbody").Elements("tr").ToList();
-
-            using (var outputFile = new StreamWriter(fullFileName))
-            {
-                foreach (HtmlNode node in x)
-                {
-                    var s = node.Elements("td").ToList();
-                    foreach (HtmlNode item in s)
-                    {
-                        outputFile.Write(String.Concat(ScrubHtml(item.InnerText), ","));
-                    }
-                    outputFile.WriteLine();
-                }
-            }
-        }
-
         static void Main(string[] args)
         {
             var file = String.Concat(Directory.GetCurrentDirectory(), "/TMob.html");
