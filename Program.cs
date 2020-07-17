@@ -58,7 +58,6 @@ namespace SillasParser
                 var document = new HtmlAgilityPack.HtmlDocument();
                 document.Load(sr);
 
-                var h = document.GetElementbyId("thead").Elements("tr").ToList();
                 var x = document.GetElementbyId("tbody").Elements("tr").ToList();
 
                 using (var outputFile = new StreamWriter(resultFile))
