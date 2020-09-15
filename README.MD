@@ -1,4 +1,4 @@
-Parser for a HTML table to CSV.
+Parser for a HTML table to JSON.
 
 .net core 3.1 SDK should be installed, just run in the terminal -> dotnet build && dotnet run
 
